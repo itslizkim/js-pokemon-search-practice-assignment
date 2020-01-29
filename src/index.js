@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  console.log(POKEMON)
+  // console.log(POKEMON)
   renderAllPokemon(POKEMON)
   document.querySelector("#pokemon-search-form").addEventListener('input', searchResults)
 })
@@ -32,14 +32,11 @@ function renderOnePokemon(pokemonObj){
 
   outerDiv.innerHTML =
     `<div class="pokemon-frame">
-      <div class="content">
       <h1 class="center-text">${pokemonObj.name}</h1>
-      </div>
       <div class="pokemon-image">
-      <img src="${pokemonObj.sprites.front}" alt="${pokemonObj.name} class="front back">
+        <img src="${pokemonObj.sprites.front}" alt="${pokemonObj.name} class="front back">
       </div>
-      <p class="abilities"> abilities: ${pokemonObj.abilities}</p>
-    </p>
+    </div> 
    `
   PokemonList.append(outerDiv)
 
@@ -60,8 +57,6 @@ function renderOnePokemon(pokemonObj){
 function renderAllPokemon(pokemonData){
   pokemonData.forEach(renderOnePokemon)
 }
-
-
 
 // function flipImg (){
 //   document.body.classList.toggle("flip-image")
